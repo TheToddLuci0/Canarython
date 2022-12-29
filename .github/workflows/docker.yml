@@ -37,4 +37,4 @@ jobs:
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.version=${{ env.BUILD_VER }}
           push: true
-          tags: thetoddluci0/canarython:dev,thetoddluci0/canarython:gh_run_${{ env.GITHUB_RUN_ID }}
+          tags: thetoddluci0/canarython:dev
