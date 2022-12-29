@@ -1,0 +1,31 @@
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "Canarython"
+dynamic=["version"]
+authors = [
+  { name="TheToddLuci0"},
+]
+description = "Generate 'Warrant Cannaries' easily"
+readme = "README.md"
+requires-python = ">=3.7"
+dependencies = [
+    "feedparser"
+]
+classifiers = [
+    "Programming Language :: Python :: 3",
+    "License :: OSI Approved :: MIT License",
+    "Operating System :: OS Independent",
+]
+
+[tool.setuptools.dynamic]
+version = {attr = "canarython.VERSION"}
+
+[project.urls]
+"Homepage" = "https://github.com/TheToddLuci0/canarython"
+"Bug Tracker" = "https://github.com/TheToddLuci0/canarython/issues"
+
+[project.scripts]
+canarython = "canarython:canarython.main"
