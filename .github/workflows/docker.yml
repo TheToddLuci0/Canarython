@@ -4,12 +4,13 @@ on:
   push:
     branches:
       - 'master'
-
-inputs:
-  tags:
-    description: CSV string of tags to apply
-    required: true
-    default: thetoddluci0/canarython:dev
+  workflow_call:
+    inputs:
+      tags:
+        description: CSV string of tags to apply
+        required: true
+        default: thetoddluci0/canarython:dev
+        secrets: inherit
 
 jobs:
   docker:
