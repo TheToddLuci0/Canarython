@@ -7,6 +7,7 @@ jobs:
     uses: ./.github/workflows/docker.yml
     with:
       tags: thetoddluci0/canarython:latest,thetoddluci0/canarython:${{ github.GITHUB_REF }}
+    secrets: inherit
   build:
     steps:
     - uses: actions/checkout@master
