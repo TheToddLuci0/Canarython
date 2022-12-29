@@ -1,9 +1,15 @@
-name: Docker Hub
+name: Docker Hub Publish
 
 on:
   push:
     branches:
       - 'master'
+
+inputs:
+  tags:
+    description: CSV string of tags to apply
+    required: true
+    default: thetoddluci0/canarython:dev
 
 jobs:
   docker:
@@ -37,4 +43,4 @@ jobs:
             org.opencontainers.image.source=https://github.com/${{ github.repository }}
             org.opencontainers.image.version=${{ env.BUILD_VER }}
           push: true
-          tags: thetoddluci0/canarython:dev
+          tags: ${{ inputs.tags }}
