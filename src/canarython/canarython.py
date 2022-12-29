@@ -4,6 +4,7 @@ import feedparser
 from datetime import datetime
 import subprocess
 
+VERSION = '0.0.1'
 RSS_DEFAULTS = ['http://rss.cnn.com/rss/cnn_topstories.rss',
 'https://moxie.foxnews.com/google-publisher/latest.xml',
 'http://feeds.bbci.co.uk/news/world/rss.xml',
@@ -19,11 +20,11 @@ Current headlines as of {dt}:
         proof += "Latest from '{site}' ({url})\nLast Updated {t}\n".format(site=r['feed']['title'], url=url, t=r['feed']['updated'])
         for i in range(0,3):
             proof += "{}\n{}\n\n".format(r['entries'][i]['title'], r['entries'][i]['link'])
-    proof += """===================================="""
-    if not no_version:
+    proof += """====================================\n"""
+    if no_version == False:
+        proof += "Generated with canarython version {}\n".format(VERSION)
         try:
             sha = subprocess.check_output(['git', 'rev-parse', 'HEAD']).decode('ascii').strip()
-            proof += "Generated with canarython version {}".format(VERSION)
             proof += ("Commit {}\n".format(sha))
         except:
             pass

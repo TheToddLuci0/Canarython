@@ -21,7 +21,7 @@ classifiers = [
 ]
 
 [tool.setuptools.dynamic]
-version = {attr = "canarython.VERSION"}
+version = {attr = "canarython.canarython.VERSION"}
 
 [project.urls]
 "Homepage" = "https://github.com/TheToddLuci0/canarython"
