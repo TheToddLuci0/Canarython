@@ -9,6 +9,7 @@ on:
       tags:
         description: CSV string of tags to apply
         required: true
+        type: string
         default: thetoddluci0/canarython:dev
 
 jobs:
